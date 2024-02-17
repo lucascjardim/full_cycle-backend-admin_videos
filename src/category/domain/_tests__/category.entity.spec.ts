@@ -145,7 +145,6 @@ describe("Category Unit Tests", () => {
 describe("Category Validator", () => {
   describe("create command", () => {
     test("should an invalid category with name property", () => {
-      const arrange = [];
 
       expect(() => Category.create({ name: null })).containsErrorMessages({
         name: [

@@ -16,10 +16,12 @@ describe("uuid unit tests", () => {
     const uuid = new Uuid();
     expect(uuid.id).toBeDefined();
     expect(uuidValidate(uuid.id)).toBe(true);
+    expect(validateSpy).toHaveBeenCalledTimes(1);
   });
 
   test('should accept a valid uuid', () => {
     const uuid = new Uuid('37ce7afa-b3dd-4002-9414-b4154c502e1e');
     expect(uuid.id).toBe('37ce7afa-b3dd-4002-9414-b4154c502e1e');
+    expect(validateSpy).toHaveBeenCalledTimes(1);
   })
 });
